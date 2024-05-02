@@ -28,7 +28,7 @@ jobs:
       - name: Create and Push Dummy File
         run: |
           rm 1.txt
-          echo "Hello, GitHub Actions!" > 1.txt
+          echo "Hello, GitHub Actions! This message was generated at $(date +'%Y-%m-%d %H:%M:%S')" > 1.txt
           git add 1.txt
           git commit -m "Add 1.txt"
           git push -u origin HEAD
