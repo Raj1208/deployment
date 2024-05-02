@@ -19,14 +19,16 @@ jobs:
 
       - name: Pull Docker Image
         run: docker pull raj456/homzy:latest
-      - name: Commit SHA Digest File
+      - name: Initialize Git Repository
         run: |
-         echo "Adding SHA Digest file"
-         touch 1.txt
-         git config --global user.email "rajchauhan1208@gmail.com"
-         git config --global user.name "Raj1208"
-         git add 1.txt # Full path for the artifact
-         git commit -m "Add SHA Digest file"
-    
-         git -c http.extraheader="AUTHORIZATION: bearer ${{ secrets.ARGOCD_PAT }}" push
+          git init
+          git config --global user.email "rajchauhan1208@gmail.com"
+          git config --global user.name "Raj1208"
+
+      - name: Create and Push Dummy File
+        run: |
+          echo "Hello, GitHub Actions!" > 1.txt
+          git add 1.txt
+          git commit -m "Add 1.txt"
+          git push -u origin HEAD
 
