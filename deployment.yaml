@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: raj456/homzy:v2
+        image: raj456/homzy:v1
         ports:
         - containerPort: 80
