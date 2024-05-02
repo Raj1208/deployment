@@ -27,6 +27,7 @@ jobs:
 
       - name: Create and Push Dummy File
         run: |
+          rm 1.txt
           echo "Hello, GitHub Actions!" > 1.txt
           git add 1.txt
           git commit -m "Add 1.txt"
