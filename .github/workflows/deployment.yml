@@ -17,3 +17,11 @@ jobs:
 
       - name: Pull Docker Image
         run: docker pull raj456/homzy:latest
+      - name: Commit SHA Digest File
+        run: |
+         git config --global user.email "rajchauhan1208@gmail.com"
+         git config --global user.name "Raj1208"
+         touch 1.txt
+         git add 1.txt # Full path for the artifact
+         git commit -m "Add SHA Digest file"
+         git push
